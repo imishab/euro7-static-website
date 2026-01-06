@@ -1,0 +1,1 @@
+# euro7-static-website
