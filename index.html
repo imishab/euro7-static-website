@@ -67,6 +67,169 @@
             color: #FFF;
             transform: scale(1.1);
         }
+
+        /* Modal Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-content {
+            background: #fff;
+            width: 900px;
+            max-width: 90%;
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+        }
+
+        .popup-overlay.show .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-left {
+            width: 45%;
+            background: url('assets/images/business/01.webp') no-repeat center center/cover;
+            min-height: 400px;
+        }
+
+        .popup-right {
+            width: 55%;
+            padding: 40px;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .popup-close:hover {
+            color: #000;
+        }
+
+        .popup-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1c2539;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .popup-subtitle {
+            font-size: 26px;
+            font-weight: 700;
+            color: #E86C00;
+            /* Orange color matching image */
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .popup-desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .popup-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .popup-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .popup-list li {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .popup-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .popup-note {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .popup-btn {
+            background-color: #E86C00;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .popup-btn:hover {
+            background-color: #d16100;
+            color: white;
+        }
+
+        .popup-nothanks {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 13px;
+            color: #777;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .popup-content {
+                flex-direction: column;
+                max-width: 95%;
+            }
+
+            .popup-left {
+                width: 100%;
+                height: 200px;
+                min-height: auto;
+            }
+
+            .popup-right {
+                width: 100%;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -1743,6 +1906,69 @@
         </svg>
     </div>
     <!-- progress area end -->
+
+    <!-- Modal Popup -->
+    <div id="promoPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-left"></div>
+            <div class="popup-right">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <div class="popup-title">Start Your UAE Business</div>
+                <span class="popup-subtitle">for AED 4,444</span>
+                <p class="popup-desc">Business setup made easy with expert guidance.</p>
+
+                <div class="popup-section-title">Included in the Package:</div>
+                <ul class="popup-list">
+                    <li>Free Initial Consultation</li>
+                    <li>Assistance with UAE Bank Account Opening</li>
+                    <li>Step-by-Step Business Setup Guidance</li>
+                    <li>Full Documentation Support</li>
+                </ul>
+
+                <p class="popup-note">Perfect for E-Commerce, Consultancy, Online Businesses & more.</p>
+
+                <div>
+                    <a href="contact.html" class="popup-btn">Book Free Consultation</a>
+                    <span class="popup-nothanks" onclick="closePopup()">No thanks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Script -->
+    <script>
+        function closePopup() {
+            const popup = document.getElementById('promoPopup');
+            popup.classList.remove('show');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+
+            // Set local storage to expire in 24 hours
+            const now = new Date().getTime();
+            localStorage.setItem('popupClosedTime', now);
+        }
+
+        function showPopup() {
+            const popup = document.getElementById('promoPopup');
+            popup.style.display = 'flex';
+            // Slight delay to allow display flex to apply before opacity transition
+            setTimeout(() => {
+                popup.classList.add('show');
+            }, 10);
+        }
+
+        window.addEventListener('load', function () {
+            const lastClosed = localStorage.getItem('popupClosedTime');
+            const now = new Date().getTime();
+            const twentyFourHours = 24 * 60 * 60 * 1000;
+
+            if (!lastClosed || (now - lastClosed > twentyFourHours)) {
+                // Show after a short delay for better UX
+                setTimeout(showPopup, 2000);
+            }
+        });
+    </script>
 
     <script src="assets/js/plugins/jquery.js"></script>
 
