@@ -230,6 +230,104 @@
                 padding: 20px;
             }
         }
+
+        /* License Cards Hover Effect */
+        .license-service-card,
+        .license-available-card {
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .license-service-card::before,
+        .license-available-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            transition: all 0.4s ease;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .license-service-card>*,
+        .license-available-card>* {
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .license-service-card:hover,
+        .license-available-card:hover {
+            background: url('assets/images/service/06.webp') no-repeat center center / cover !important;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .license-service-card:hover::before,
+        .license-available-card:hover::before {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .license-service-card:hover h3,
+        .license-available-card:hover h3 {
+            color: #fff !important;
+        }
+
+        .license-service-card:hover .service-list li,
+        .license-service-card:hover .license-list li,
+        .license-available-card:hover .service-list li,
+        .license-available-card:hover .license-list li {
+            color: #fff !important;
+        }
+
+        .license-service-card:hover .service-list li span,
+        .license-service-card:hover .license-list li span,
+        .license-available-card:hover .service-list li span,
+        .license-available-card:hover .license-list li span {
+            color: #fff !important;
+        }
+
+        .license-service-card:hover .service-list li i,
+        .license-service-card:hover .license-list li i,
+        .license-available-card:hover .service-list li i,
+        .license-available-card:hover .license-list li i {
+            color: #fff !important;
+        }
+
+        /* Trading License Section Responsive */
+        @media (max-width: 991px) {
+
+            .license-service-card,
+            .license-available-card {
+                margin-bottom: 30px;
+                padding: 30px !important;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .license-service-card,
+            .license-available-card {
+                padding: 25px !important;
+            }
+
+            .license-service-card h3,
+            .license-available-card h3 {
+                font-size: 20px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .service-list li,
+            .license-list li {
+                font-size: 14px !important;
+                margin-bottom: 12px !important;
+            }
+        }
     </style>
 </head>
 
@@ -839,99 +937,249 @@
             <div class="row mt-5 mb-0">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <section class="main-wrapper-sticky">
-                        <div class="row gap-6">
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/01.svg" alt="service">
+                        <div class="row mt-5 mb-0">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                <section class="main-wrapper-sticky">
+                                    <div class="row gap-6">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="sticky-statement narrow">
+                                                <div class="left-side">
+                                                    <div class="icon">
+                                                        <img src="assets/images/service/01.svg" alt="service">
+                                                    </div>
+                                                    <h5 class="title">Company Formation                                                    </h5>
+                                                </div>
+                                                <div class="right">
+                                                    <a href="#!" class="arrow">
+                                                        <i class="fa-regular fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h5 class="title">Ministry Services</h5>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="sticky-statement narrow">
+                                                <div class="left-side">
+                                                    <div class="icon">
+                                                        <img src="assets/images/service/02.svg" alt="service">
+                                                    </div>
+                                                    <h5 class="title">Trademark Registration                                                    </h5>
+                                                </div>
+                                                <div class="right">
+                                                    <a href="#!" class="arrow">
+                                                        <i class="fa-regular fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="sticky-statement narrow">
+                                                <div class="left-side">
+                                                    <div class="icon">
+                                                        <img src="assets/images/service/02.svg" alt="service">
+                                                    </div>
+                                                    <h5 class="title">Banking Solutions                                                    </h5>
+                                                </div>
+                                                <div class="right">
+                                                    <a href="#!" class="arrow">
+                                                        <i class="fa-regular fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="sticky-statement narrow">
+                                                <div class="left-side">
+                                                    <div class="icon">
+                                                        <img src="assets/images/service/01.svg" alt="service">
+                                                    </div>
+                                                    <h5 class="title">Legal services</h5>
+                                                </div>
+                                                <div class="right">
+                                                    <a href="#!" class="arrow">
+                                                        <i class="fa-regular fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
                                     </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
+                                    <div class="row rts-section-gap" style="margin-top: -50px !important;">
+                                        <div class="col-lg-12">
+                                            <div class="service-bottom-cta" style="background: #848484 !important;">
+                                                <h5 class="title">Do You Need Any Kind Of Work?</h5>
+                                                <div class="right">
+                                                    <p>Call Us Anytime! <a href="#">+965 9669 9251</a></p>
+                                                </div>
+                                                <div class="mid-image">
+                                                    <img src="assets/images/service/01.png" alt="service_image">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                </section>
+            
+                            </div>
+            
+                        </div>
+                 
+                        <style> 
+                            .rts-section-eee {
+                                margin-top: -150px !important;
+                            }
+                            @media (max-width: 767px) {
+                                .rts-section-eee {
+                                    margin-top: 20px !important;
+                                }
+                            }
+                        </style>
+                        <div class="row g-4 rts-section-eee" >
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <div class="license-service-card"
+                                    style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; position: relative; overflow: hidden;">
+                                    <h3 class="title mb--30"
+                                        style="font-size: 24px; font-weight: 700; color: #1c2539; margin-bottom: 30px;">
+                                        Our Services
+                                    </h3>
+                                    <ul class="service-list" style="list-style: none; padding: 0; margin: 0;">
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>K-NET SERVICE</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>CONSULTANCY SERVICE</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>IMPORT & EXPORT</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>ALL MINISTRY SERVICES</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>COMPANY SET UP</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>FEASIBILITY STUDIES</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>LEGAL ADVICES</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>TM REGISTRATION</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>BRAND REGISTRATION</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>DIGITAL MARKETING</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>AUDITING</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/02.svg" alt="service">
-                                        </div>
-                                        <h5 class="title">License Services</h5>
-                                    </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/02.svg" alt="service">
-                                        </div>
-                                        <h5 class="title">Feasibility Study</h5>
-                                    </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/01.svg" alt="service">
-                                        </div>
-                                        <h5 class="title">Ministry Services</h5>
-                                    </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/02.svg" alt="service">
-                                        </div>
-                                        <h5 class="title">License Services</h5>
-                                    </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="sticky-statement narrow">
-                                    <div class="left-side">
-                                        <div class="icon">
-                                            <img src="assets/images/service/02.svg" alt="service">
-                                        </div>
-                                        <h5 class="title">Feasibility Study</h5>
-                                    </div>
-                                    <div class="right">
-                                        <a href="#!" class="arrow">
-                                            <i class="fa-regular fa-arrow-right"></i>
-                                        </a>
-                                    </div>
+                            <div class="col-lg-6 col-md-6 mb-4">
+                                <div class="license-available-card"
+                                    style="background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); height: 100%; position: relative; overflow: hidden;">
+                                    <h3 class="title mb--30"
+                                        style="font-size: 24px; font-weight: 700; color: #1c2539; margin-bottom: 30px;">
+                                        License Available
+                                    </h3>
+                                    <ul class="license-list" style="list-style: none; padding: 0; margin: 0;">
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>ALL KIND OF FACTORY</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>REAL ESTATE</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>SUPER MARKET</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>RESTAURANT</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>SECURITY SERVICE</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>HOME SERVICE</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>DELIVERY CO.</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>MEDICAL CO.</span>
+                                        </li>
+                                        <li
+                                            style="display: flex; align-items: center; margin-bottom: 15px; font-size: 16px; color: #555;">
+                                            <i class="fa-solid fa-check"
+                                                style="color: #7cba00; margin-right: 12px; font-size: 18px;"></i>
+                                            <span>MOBILE SHOPS</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="row rts-section-gap" style="margin-top: -40px !important;">
+                       
+                        
+                        <!-- <div class="row rts-section-gap" style="margin-top: -40px !important;">
                             <div class="col-lg-12">
                                 <div class="service-bottom-cta" style="background: #848484 !important;">
                                     <h5 class="title">Do You Need Any Kind Of Work?</h5>
@@ -943,7 +1191,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
 
                 </div>
@@ -956,6 +1204,16 @@
     <!-- rts service area end -->
 
     <!-- rts about us area start -->
+     <style>
+        .rts-about-us-area-8 {
+            margin-top: 680px !important;
+        }
+        @media (max-width: 767px) {
+            .rts-about-us-area-8 {
+                margin-top: 20px !important;
+            }
+        }
+     </style>
     <div class="rts-about-us-area-8 bg_primary rts-section-gapTop pb--100">
         <div class="container">
             <div class="row align-items-center">
@@ -1583,7 +1841,8 @@
                                 </div>
                                 <div class="inner-content">
                                     <h5 class="title text-white">Call Us 24/7</h5>
-                                    <a href="#" class="text-white">+965 9669 9251</a>
+                                    <a href="#" class="text-white">+965 96699251</a> <br>
+                                    <a href="#" class="text-white">+965 65994277</a>
                                 </div>
                             </div>
                             <div class="signle-footer-contact-8">
@@ -1592,7 +1851,8 @@
                                 </div>
                                 <div class="inner-content">
                                     <h5 class="title text-white">Work with us</h5>
-                                    <a href="#" class="text-white">euro7headoffice@gmail.com</a>
+                                    <a href="#" class="text-white">euro7headoffice@gmail.com <br>
+                                        sales.euro7@gmail.com</a>
                                 </div>
                             </div>
                             <div class="signle-footer-contact-8">
@@ -1601,8 +1861,10 @@
                                 </div>
                                 <div class="inner-content">
                                     <h5 class="title">Our Location</h5>
-                                    <a href="#" class="text-white">Nesto Hyper building Floor:1
-                                        Office No:18 <br> Block:7 Dabbous</a>
+                                    <a href="#" class="text-white">Nesto Hyper building <br> Floor:1   Office No:18
+                                        Block:7 <br>
+                                        Dabbous street Fahaheel  Kuwait
+                                        </a>
                                 </div>
                             </div>
                         </div>
@@ -1652,13 +1914,15 @@
                         <!-- single -->
                         <div class="single">
                             <i class="fas fa-phone-alt"></i>
-                            <a href="#">+965 966 992 51</a>
+                            <a href="#">+965 96699251, </a> 
+                            <a href="#">+965 65994277</a>
                         </div>
                         <!-- single ENd -->
                         <!-- single -->
                         <div class="single">
                             <i class="fas fa-envelope"></i>
-                            <a href="#">euro7headoffice@gmail.com</a>
+                            <a href="#">euro7headoffice@gmail.com,
+                                sales.euro7@gmail.com</a>
                         </div>
                         <!-- single ENd -->
                         <!-- single -->
@@ -1671,7 +1935,7 @@
                         <div class="single">
                             <i class="fas fa-map-marker-alt"></i>
                             <a href="#">Nesto Hyper building Floor:1 Office No:18
-                                Block:7 Dabbous</a>
+                                Block:7 Dabbous street Fahaheel Kuwait</a>
                         </div>
                         <!-- single ENd -->
                     </div>
@@ -1897,7 +2161,7 @@
     <!-- rtl btn area end -->
 
     <!-- WhatsApp Floating Action Button -->
-    <a href="https://wa.me/96596699251" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/qr/LJC7QH3FU5XAI1" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
