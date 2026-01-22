@@ -12207,6 +12207,33 @@ section.main-wrapper-sticky .sticky-statement.service-6:hover {
   background-image: url(../img/services/6.png);
 }
 
+section.main-wrapper-sticky .sticky-statement.service-7:hover {
+  background-image: url(../img/services/1.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-8:hover {
+  background-image: url(../img/services/2.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-9:hover {
+  background-image: url(../img/services/3.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-10:hover {
+  background-image: url(../img/services/4.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-11:hover {
+  background-image: url(../img/services/5.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-12:hover {
+  background-image: url(../img/services/6.png);
+}
+
+
+
+
 
 section.main-wrapper-sticky .sticky-statement:hover .left-side img {
   filter: brightness(0) saturate(100%) invert(97%) sepia(97%) saturate(0%) hue-rotate(325deg) brightness(102%) contrast(100%);
@@ -17315,6 +17342,18 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 .footer-logo-area-left-8 .logo {
   display: block;
   margin-bottom: 25px;
+}
+
+.footer-logo-area-left-8 .logo img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-logo-area-left-8 .logo img {
+    max-width: 200px;
+    width: auto;
+  }
 }
 
 .footer-logo-area-left-8 p.disc {
