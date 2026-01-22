@@ -12180,9 +12180,33 @@ section.main-wrapper-sticky .sticky-statement * {
 }
 
 section.main-wrapper-sticky .sticky-statement:hover {
-  background-image: url(../images/service/06.webp);
   background-position: center center;
 }
+
+section.main-wrapper-sticky .sticky-statement.service-1:hover {
+  background-image: url(../img/services/1.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-2:hover {
+  background-image: url(../img/services/2.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-3:hover {
+  background-image: url(../img/services/3.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-4:hover {
+  background-image: url(../img/services/4.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-5:hover {
+  background-image: url(../img/services/5.png);
+}
+
+section.main-wrapper-sticky .sticky-statement.service-6:hover {
+  background-image: url(../img/services/6.png);
+}
+
 
 section.main-wrapper-sticky .sticky-statement:hover .left-side img {
   filter: brightness(0) saturate(100%) invert(97%) sepia(97%) saturate(0%) hue-rotate(325deg) brightness(102%) contrast(100%);
@@ -20015,8 +20039,11 @@ section.main-wrapper-sticky .sticky-statement.narrow .left-side img {
 
 .progress-area-wrapper.style-8 {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 26px;
+  text-align: center;
 }
 
 .progress-area-wrapper.style-8 .title {
